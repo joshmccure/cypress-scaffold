@@ -7,8 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: hallee/eslint-action@1.0.1
-        with:
-          "**/*.js"
       - uses: cypress-io/github-action@v1
         with:
           browser: chrome
