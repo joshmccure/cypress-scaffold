@@ -8,7 +8,7 @@ Once you have cloned the repository:
 1. Open your terminal
 2. Run `npm i` to install the dependencies
 
-### Run Tests with Cypress.io
+### Run Tests with [Cypress.io](https://docs.cypress.io/)
 
 ##### Running Tests with a Headed Browser
 1. Enter the following command to open the Cypress Test Runner:
@@ -28,9 +28,9 @@ Once you have cloned the repository:
 
 If you notice tests failing intermittently, try debug them locally with `cy:open` in chrome with the console open.
 
-- Reproduce the failure
-- Find the line where the test fails
-- Find the root cause of the failure
+1. Reproduce the failure
+2. Find the line where the test fails
+3. Find the root cause of the failure
 
 If it looks like it's failing to wait for an element, try waiting for the element to be visible `cy.get('#my-element').should('be.visible')`
 
@@ -39,8 +39,8 @@ If it looks like it's failing from changing test data, try to make sure your tes
 ### Test(s) are failing in the CI Pipeline
 If you notice tests are failing in the CI pipeline but aren't failing on your local machine, try to reproduce the CI test run as it does on CI.
 
-- build the cypress docker image
-- run your tests on the cypress container headlessly
+1. build the cypress docker image
+2. run your tests on the cypress container headlessly
 
 ## 🤝 Contributing
 
@@ -84,5 +84,3 @@ Anyone! Please make sure that all the linting and tests are passing before appro
 #### View the CI Pipeline
 
 To view the CI Pipeline latest runs go [here.](https://github.com/joshpzero/cypress-scaffold)
-
-
