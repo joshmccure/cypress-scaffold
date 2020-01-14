@@ -13,16 +13,14 @@ Once you have cloned the repository:
 ##### Running Tests with a Headed Browser
 1. Enter the following command to open the Cypress Test Runner:
 
-   ```npm run cy:open
-   ```
+   `npm run cy:open`
 
 2. Once opened, you can select which tests to run:
 
 ##### Running Tests with a Headless Browser
 1. Enter the following command to run tests with headless chrome:
 
-   ```npm run cy:run
-   ```
+   `npm run cy:run`
 
 ## ⚠️ Troubleshooting Failures
 
@@ -33,8 +31,10 @@ If you notice tests failing intermittently, try debug them locally with `cy:open
 - Reproduce the failure
 - Find the line where the test fails
 - Find the root cause of the failure
- - waiting error
- - assertion error
+
+If it looks like it's failing to wait for an element, try waiting for the element to be visible `cy.get('#my-element').should('be.visible')`
+
+If it looks like it's failing from changing test data, try to make sure your tests don't rely on built up state, you can read about this [here.](https://docs.cypress.io/guides/references/best-practices.html#Having-tests-rely-on-the-state-of-previous-tests)
 
 ### Test(s) are failing in the CI Pipeline
 If you notice tests are failing in the CI pipeline but aren't failing on your local machine, try to reproduce the CI test run as it does on CI.
@@ -83,6 +83,6 @@ Anyone! Please make sure that all the linting and tests are passing before appro
 
 #### View the CI Pipeline
 
-To view the CI Pipeline latest runs go here
+To view the CI Pipeline latest runs go [here.](https://github.com/joshpzero/cypress-scaffold)
 
 
