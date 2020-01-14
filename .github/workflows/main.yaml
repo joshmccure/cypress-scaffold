@@ -10,8 +10,6 @@ jobs:
         with:
           browser: chrome
           headless: true
-          parallel: true
-          group: 'Cypress Scaffold'
           record: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
