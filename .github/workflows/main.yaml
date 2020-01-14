@@ -18,7 +18,5 @@ jobs:
       - uses: actions/upload-artifact@v1
         if: always()
         with:
-          name: cypress-videos
-          path: cypress/videos
           name: cypress-screenshots
           path: cypress/screenshots
