@@ -6,7 +6,7 @@ jobs:
     container: cypress/browsers:node13.3.0-chrome-79-ff70
     steps:
       - uses: actions/checkout@v1
-      - uses: hallee/eslint-action@1.0.1
+      - run: npm run lint
       - uses: cypress-io/github-action@v1
         with:
           browser: chrome
