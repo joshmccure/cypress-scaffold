@@ -13,12 +13,12 @@
   "author": "Josh McCure",
   "license": "ISC",
   "devDependencies": {
-    "commitizen": "^4.0.3",
-    "cypress": "^3.8.2",
-    "cz-conventional-changelog": "^3.0.2",
-    "eslint": "^6.8.0",
-    "eslint-plugin-cypress": "^2.8.1",
-    "eslint-plugin-no-only-tests": "^2.4.0"
+    "commitizen": "4.0.3",
+    "cypress": "3.8.2",
+    "cz-conventional-changelog": "3.0.2",
+    "eslint": "6.8.0",
+    "eslint-plugin-cypress": "2.8.1",
+    "eslint-plugin-no-only-tests": "2.4.0"
   },
   "config": {
     "commitizen": {
