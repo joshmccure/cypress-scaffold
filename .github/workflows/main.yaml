@@ -3,9 +3,23 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    container: cypress/browsers:latest
     steps:
       - uses: actions/checkout@v1
       - uses: cypress-io/github-action@v1
         with:
           browser: chrome
           headless: true
+          record: true
+          parallel: true
+          group: 'Cypress Scaffold'
+          env:
+            CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+      - uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
