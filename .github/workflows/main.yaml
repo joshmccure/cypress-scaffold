@@ -1,4 +1,4 @@
-name: Chrome headless
+name: Cypress Chrome Headless
 on: [push]
 jobs:
   cypress-run:
@@ -14,7 +14,7 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
       - uses: actions/upload-artifact@v1
-        if: always()
+        if: failure()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
