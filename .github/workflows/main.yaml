@@ -1,11 +1,18 @@
 name: Cypress Chrome Headless
 on: [push]
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: npm run i
+      - run: npm run lint
   cypress-run:
     runs-on: ubuntu-latest
     container: cypress/browsers:node13.3.0-chrome-79-ff70
     steps:
       - uses: actions/checkout@v1
+      - run: npm run lint
       - run: npm run lint
       - uses: cypress-io/github-action@v1
         with:
