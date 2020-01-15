@@ -9,6 +9,7 @@ cypress.run({
   reporter: 'mochawesome',
   parallel: true,
   record: true,
+  ciBuildId: uuidv1(),
   group: 'Pipeline',
   reporterOptions: {
     reportDir: 'ci-results/mochawesome-report',
