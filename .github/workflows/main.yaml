@@ -32,7 +32,7 @@ jobs:
       - uses: actions/download-artifact@v1
         with:
           name: ci-results
-      - run: npm merge-test-results
-      - run: generate-mochawesome-test-report
+      - run: npm run merge-test-results
+      - run: npm run generate-mochawesome-test-report
     #now
     
