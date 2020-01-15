@@ -7,8 +7,10 @@
     "test": "cypress run",
     "cy:open": "cypress open",
     "cy:run": "cypress run --headless --browser chrome",
+    "cy:run:ci": "node run-ci.js",
     "commit": "git-cz",
-    "lint": "eslint **/*.js"
+    "lint": "eslint **/*.js",
+    "lint:fix": "eslint --fix **/*.js"
   },
   "author": "Josh McCure",
   "license": "ISC",
