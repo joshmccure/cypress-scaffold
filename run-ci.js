@@ -9,7 +9,7 @@ cypress.run({
   reporter: 'mochawesome',
   parallel: true,
   record: true,
-  ciBuildId: uuidv1(),
+  ciBuildId: process.env.GITHUB_SHA,
   group: 'Pipeline',
   reporterOptions: {
     reportDir: 'ci-results/mochawesome-report',
