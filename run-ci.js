@@ -6,8 +6,6 @@ cypress.run({
   browser: 'chrome',
   headless: true,
   configFile: 'config/ci.config.json',
-  screenshotsFolder: 'ci-results/mochawesome-report/assets',
-  // parallel: true,
   reporter: 'mochawesome',
   reporterOptions: {
     reportDir: 'ci-results/mochawesome-report',
