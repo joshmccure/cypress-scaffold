@@ -24,12 +24,12 @@ jobs:
         with:
           name: ci-results
           path: ci-results
-  test-report:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v1
-        with:
-          name: ci-results
-      - run: npm merge-test-results
-      - run: generate-mochawesome-test-report
+  # test-report:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/download-artifact@v1
+  #       with:
+  #         name: ci-results
+  #     - run: npm merge-test-results
+  #     - run: generate-mochawesome-test-report
     
