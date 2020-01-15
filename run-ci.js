@@ -1,17 +1,25 @@
 const cypress = require('cypress')
 const fs = require('fs');
+const uuidv1 = require('uuid/v1');
 
 cypress.run({
   browser: 'chrome',
+  headless: true,
   configFile: 'config/ci.config.json',
-  env: {
-    foo: 'bar',
-    baz: 'quux',
+  screenshotsFolder: 'ci-results/mochawesome-report/assets',
+  // parallel: true,
+  reporter: 'mochawesome',
+  reporterOptions: {
+    reportDir: 'ci-results/mochawesome-report',
+    reportFilename: uuidv1(),
+    overwrite: false,
+    html: false,
+    json: true
   }
 })
 .then((results) => {
     let resultsJSON = JSON.stringify(results);
-    fs.writeFileSync('ci-pipeline-run-results.json', resultsJSON);
+    fs.writeFileSync('ci-results/cypress-run-results.json', resultsJSON);
     process.exit(results.totalFailed)
   })
   .catch((error) => {
