@@ -1,12 +1,12 @@
 name: Pipeline
 on: [push]
-# jobs:
-#   lint:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v1
-#       - run: npm ci
-#       - run: npm run lint
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: npm ci
+      - run: npm run lint
   cypress-run:
     runs-on: ubuntu-latest
     strategy:
@@ -16,7 +16,6 @@ on: [push]
     steps:
       - uses: actions/checkout@v1
       - run: npm ci
-      - run: npm run lint
       - run: npm run cy:run:ci
       # - uses: cypress-io/github-action@v1
       #   with:
