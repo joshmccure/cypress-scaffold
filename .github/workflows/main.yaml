@@ -38,5 +38,10 @@ jobs:
           name: ci-results
       - run: npm run merge-test-results
       - run: npm run generate-mochawesome-test-report
+      - uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: ci-results/mochawesome-report
+          path: ci-results/mochawesome-report
     #now
     
