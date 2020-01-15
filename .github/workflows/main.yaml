@@ -15,17 +15,18 @@ jobs:
     container: cypress/browsers:node13.3.0-chrome-79-ff70
     steps:
       - uses: actions/checkout@v1
-      - uses: cypress-io/github-action@v1
-        with:
-          browser: chrome
-          headless: true
-          record: true
-          parallel: true
-          group: 'Pipeline'
+      - run: npm run cy:run:ci
+      # - uses: cypress-io/github-action@v1
+      #   with:
+      #     browser: chrome
+      #     headless: true
+      #     record: true
+      #     parallel: true
+      #     group: 'Pipeline'
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-      - uses: actions/upload-artifact@v1
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
+      # - uses: actions/upload-artifact@v1
+      #   if: failure()
+      #   with:
+      #     name: cypress-screenshots
+      #     path: cypress/screenshots
