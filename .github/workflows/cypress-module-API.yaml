@@ -1,4 +1,4 @@
-name: Pipeline
+name: Cypress Module API
 on: [push]
 jobs:
   lint:

@@ -1,0 +1,34 @@
+name: Cypress Github Actions
+on: [push]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: npm ci
+      - run: npm run lint
+  cypress-run:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        containers: [1, 2]
+    container: cypress/browsers:node13.3.0-chrome-79-ff70
+    steps:
+      - uses: actions/checkout@v1
+      - uses: cypress-io/github-action@v1
+        with:
+          browser: chrome
+          headless: true
+          record: true
+          parallel: true
+          group: 'Pipeline'
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+        # with:
+        #   name: cypress-videos
+        #   path: cypress/videos
