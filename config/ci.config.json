@@ -7,5 +7,6 @@
   "viewportHeight": 1080,
   "viewportWidth": 1920,
   "screenshotsFolder": "ci-results/mochawesome-report/assets",
+  "videoUploadOnPasses": false,
   "projectId": "xichaz"
 }
