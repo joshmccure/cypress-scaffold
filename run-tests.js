@@ -1,6 +1,7 @@
 const cypress = require('cypress')
 const fs = require('fs');
 const rm = require('rimraf')
+require('dotenv').config()
 const { v4: uuidv4 } = require('uuid');
 
 rm('test-results', (error) => {
@@ -15,6 +16,10 @@ cypress.run({
   browser: 'chrome',
   headless: true,
   configFile: 'config/ci.config.json',
+  record: true,
+  group: 'E2E',
+  tag: 'Test Environment',
+  ciBuildId: `${process.env.AUTHOR}-${process.env.EXECUTION_ENVIRONMENT}-${uuidv4()}`,
   reporter: 'mochawesome',
   reporterOptions: {
     reportDir: 'test-results/test-report',

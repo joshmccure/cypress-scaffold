@@ -24,6 +24,8 @@ jobs:
           group: 'Pipeline'
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          EXECUTION_ENVIRONMENT: ${{ secrets.EXECUTION_ENVIRONMENT }}
+          AUTHOR: ${{ secrets.AUTHOR }}
       - uses: actions/upload-artifact@v1
         if: failure()
         with:
