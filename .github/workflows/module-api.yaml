@@ -1,0 +1,55 @@
+name: Cypress Module API
+on: [push]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: lint
+    steps:
+      - uses: actions/checkout@v1
+      - run: npm ci
+      - run: npm run lint
+  cypress-run:
+    name: cypress-run
+    runs-on: ubuntu-latest
+    needs: lint
+    strategy:
+      matrix:
+        containers: [1, 2]
+    container: cypress/browsers:node13.3.0-chrome-79-ff70
+    steps:
+      - uses: actions/checkout@v1
+      - run: npm ci
+      - run: npm run cy:run:ci
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+      - uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: ci-results
+          path: ci-results
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-videos
+          path: cypress/videos
+  test-report:
+    runs-on: ubuntu-latest
+    needs: cypress-run
+    steps:
+      - uses: actions/checkout@v1
+      - run: npm ci
+      - uses: actions/download-artifact@v1
+        with:
+          name: ci-results
+      - run: npm run merge-test-results
+      - run: npm run generate-test-report
+      - uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: test-report
+          path: test-results/test-report
