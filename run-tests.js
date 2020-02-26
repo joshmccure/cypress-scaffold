@@ -4,12 +4,20 @@ const rm = require('rimraf')
 require('dotenv').config()
 const { v4: uuidv4 } = require('uuid');
 
+var CI_BUILD_ID;
+if (process.env.CI) {
+  CI_BUILD_ID = `${process.env.GITHUB_SHA}-${process.env.GITHUB_WORKFLOW}-${process.env.GITHUB_EVENTNAME}`
+}
+else {
+  CI_BUILD_ID = `${process.env.AUTHOR}-${process.env.EXECUTION_ENVIRONMENT}-${uuidv4()}`
+}
+
 rm('test-results', (error) => {
   if (error) {
-      console.error(`Error while removing existing report files: ${error}`)
-      process.exit(1)
+    console.error(`Error while removing existing report files: ${error}`)
+    process.exit(1)
   }
-  console.log('Removing all existing report files successfully!')
+  console.log(CI_BUILD_ID)
 })
 
 cypress.run({
@@ -19,7 +27,7 @@ cypress.run({
   record: true,
   group: 'E2E',
   tag: 'Test Environment',
-  ciBuildId: `${process.env.AUTHOR}-${process.env.EXECUTION_ENVIRONMENT}-${uuidv4()}`,
+  ciBuildId: CI_BUILD_ID,
   reporter: 'mochawesome',
   reporterOptions: {
     reportDir: 'test-results/test-report',
@@ -29,7 +37,7 @@ cypress.run({
     json: true
   }
 })
-.then((results) => {
+  .then((results) => {
     let resultsJSON = JSON.stringify(results);
     fs.writeFileSync('test-results/cypress-run-results.json', resultsJSON);
     process.exit(results.totalFailed)
