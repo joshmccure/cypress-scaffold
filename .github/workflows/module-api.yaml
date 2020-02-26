@@ -25,8 +25,8 @@ jobs:
       - uses: actions/upload-artifact@v1
         if: always()
         with:
-          name: ci-results
-          path: ci-results
+          name: test-results
+          path: test-results
       - uses: actions/upload-artifact@v1
         if: failure()
         with:
