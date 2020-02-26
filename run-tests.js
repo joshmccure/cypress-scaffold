@@ -5,11 +5,14 @@ require('dotenv').config()
 const { v4: uuidv4 } = require('uuid');
 
 var CI_BUILD_ID;
+var PARALLEL;
 if (process.env.CI == 'true') {
   CI_BUILD_ID = `Github-Actions-CI-${process.env.GITHUB_SHA}`
+  PARALLEL = true;
 }
 else {
   CI_BUILD_ID = `${process.env.AUTHOR}-${process.env.EXECUTION_ENVIRONMENT}-${uuidv4()}`
+  PARALLEL = false;
 }
 
 rm('test-results', (error) => {
@@ -26,6 +29,7 @@ cypress.run({
   configFile: 'config/ci.config.json',
   record: true,
   group: 'E2E',
+  parallel: PARALLEL,
   tag: 'Test Environment',
   ciBuildId: CI_BUILD_ID,
   reporter: 'mochawesome',
