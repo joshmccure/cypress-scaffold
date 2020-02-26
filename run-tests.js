@@ -6,7 +6,7 @@ const { v4: uuidv4 } = require('uuid');
 
 var CI_BUILD_ID;
 if (process.env.CI == 'true') {
-  CI_BUILD_ID = `${process.env.GITHUB_SHA}-${process.env.GITHUB_WORKFLOW}-${process.env.GITHUB_EVENTNAME}`
+  CI_BUILD_ID = `Github-Actions-CI-${process.env.GITHUB_SHA}`
 }
 else {
   CI_BUILD_ID = `${process.env.AUTHOR}-${process.env.EXECUTION_ENVIRONMENT}-${uuidv4()}`
