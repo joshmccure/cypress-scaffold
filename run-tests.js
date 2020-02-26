@@ -5,7 +5,7 @@ require('dotenv').config()
 const { v4: uuidv4 } = require('uuid');
 
 var CI_BUILD_ID;
-if (process.env.CI) {
+if (process.env.CI == 'true') {
   CI_BUILD_ID = `${process.env.GITHUB_SHA}-${process.env.GITHUB_WORKFLOW}-${process.env.GITHUB_EVENTNAME}`
 }
 else {
@@ -27,7 +27,7 @@ cypress.run({
   record: true,
   group: 'E2E',
   tag: 'Test Environment',
-  // ciBuildId: CI_BUILD_ID,
+  ciBuildId: CI_BUILD_ID,
   reporter: 'mochawesome',
   reporterOptions: {
     reportDir: 'test-results/test-report',
