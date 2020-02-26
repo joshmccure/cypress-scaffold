@@ -26,7 +26,7 @@ Once you have cloned the repository:
 
 ### Test(s) are failing intermittently
 
-If you notice tests failing intermittently, try debug them locally with `cy:open` in chrome with the console open.
+If you notice tests failing intermittently, try debug them locally with `cy:open` in chrome with the console open. trying
 
 1. Reproduce the failure
 2. Find the line where the test fails
