@@ -5,22 +5,13 @@ require('dotenv').config()
 const { v4: uuidv4 } = require('uuid');
 
 var CI_BUILD_ID;
-var PARALLEL;
-if (process.env.CI == 'true') {
-  CI_BUILD_ID = `Github-Actions-CI-${process.env.GITHUB_SHA}`
-  PARALLEL = true;
-}
-else {
-  CI_BUILD_ID = `${process.env.AUTHOR}-${process.env.EXECUTION_ENVIRONMENT}-${uuidv4()}`
-  PARALLEL = false;
-}
+process.env.CI == 'true' ? CI_BUILD_ID = `Github-Actions-CI-${process.env.GITHUB_SHA}` : CI_BUILD_ID = `${process.env.AUTHOR}-${process.env.EXECUTION_ENVIRONMENT}-${uuidv4()}`
 
 rm('test-results', (error) => {
   if (error) {
     console.error(`Error while removing existing report files: ${error}`)
     process.exit(1)
   }
-  console.log(CI_BUILD_ID)
 })
 
 cypress.run({
