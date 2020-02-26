@@ -28,10 +28,6 @@ jobs:
         with:
           name: test-results
           path: test-results
-      - uses: actions/upload-artifact@v1
-        with:
-          name: test-report
-          path: test-report
   test-report:
     runs-on: ubuntu-latest
     needs: cypress-run
@@ -40,7 +36,7 @@ jobs:
       - run: npm ci
       - uses: actions/download-artifact@v1
         with:
-          name: test-report
+          name: test-results
       - run: npm run merge-test-results
       - run: npm run generate-test-report
       - uses: actions/upload-artifact@v1
