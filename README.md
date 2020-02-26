@@ -6,21 +6,21 @@
 Once you have cloned the repository:
 
 1. Open your terminal
-2. Run `yarn` to install the dependencies
+2. Run `npm install` to install the dependencies
 
 ### Run Tests with [Cypress.io](https://docs.cypress.io/)
 
 ##### Running Tests with a Headed Browser
 1. Enter the following command to open the Cypress Test Runner:
 
-   `yarn cy:open`
+   `npm run cy:open`
 
 2. Once opened, you can select which tests to run:
 
 ##### Running Tests with a Headless Browser
 1. Enter the following command to run tests with headless chrome:
 
-   `yarn cy:run`
+   `npm run cy:run`
 
 ## ⚠️ Troubleshooting Failures
 
@@ -52,17 +52,17 @@ For any kind of change to files in this repo, you can follow the below steps.
 
 - Create a new branch with a descriptive name. Eg. `test/new-user`
 
-- Run `yarn` to ensure you have all the latest depedencies installed. If you're updating dependencies in `package.json`
+- Run `npm install` to ensure you have all the latest depedencies installed. If you're updating dependencies in `package.json`
 
 - Once you have completed the changes you want to push, run the linting, ensure the tests pass headlessly, as they run on CI this way:
 
-  `yarn lint`  
-  `yarn cy:run`
+  `npm run lint`  
+  `npm run cy:run`
 
 - Once all linting and the tests are passing, add your changes and commit them to your branch with commitizen.
 
   `git add <files>`  
-  `yarn commit`
+  `npm run commit`
 
 - Select the appropriate type of commit with commitizen and push your changes to your branch.  
   `git push origin test/new-user`
