@@ -29,7 +29,7 @@ cypress.run({
   configFile: 'config/ci.config.json',
   record: true,
   group: 'E2E',
-  parallel: PARALLEL,
+  parallel: true,
   tag: 'Test Environment',
   ciBuildId: CI_BUILD_ID,
   reporter: 'mochawesome',
