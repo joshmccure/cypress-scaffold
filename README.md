@@ -6,7 +6,7 @@
 Once you have cloned the repository:
 
 1. Open your terminal
-2. Run `npm i` to install the dependencies
+2. Run `npm install` to install the dependencies
 
 ### Run Tests with [Cypress.io](https://docs.cypress.io/)
 
@@ -52,7 +52,7 @@ For any kind of change to files in this repo, you can follow the below steps.
 
 - Create a new branch with a descriptive name. Eg. `test/new-user`
 
-- Run `npm i` to ensure you have all the latest depedencies installed. If you're updating dependencies in `package.json`
+- Run `npm install` to ensure you have all the latest depedencies installed. If you're updating dependencies in `package.json`
 
 - Once you have completed the changes you want to push, run the linting, ensure the tests pass headlessly, as they run on CI this way:
 
