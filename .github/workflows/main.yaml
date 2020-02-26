@@ -5,8 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: npm ci
-      - run: npm run lint
+      - run: yarn install --frozen-lockfile
+      - run: yarn lint
   cypress-run:
     runs-on: ubuntu-latest
     strategy:

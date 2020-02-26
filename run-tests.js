@@ -1,6 +1,15 @@
 const cypress = require('cypress')
 const fs = require('fs');
-const uuidv1 = require('uuid/v1');
+const rm = require('rimraf')
+const { v4: uuidv4 } = require('uuid');
+
+rm('test-results', (error) => {
+  if (error) {
+      console.error(`Error while removing existing report files: ${error}`)
+      process.exit(1)
+  }
+  console.log('Removing all existing report files successfully!')
+})
 
 cypress.run({
   browser: 'chrome',
@@ -8,8 +17,8 @@ cypress.run({
   configFile: 'config/ci.config.json',
   reporter: 'mochawesome',
   reporterOptions: {
-    reportDir: 'ci-results/mochawesome-report',
-    reportFilename: uuidv1(),
+    reportDir: 'test-results/test-report',
+    reportFilename: uuidv4(),
     overwrite: false,
     html: false,
     json: true
@@ -17,7 +26,7 @@ cypress.run({
 })
 .then((results) => {
     let resultsJSON = JSON.stringify(results);
-    fs.writeFileSync('ci-results/cypress-run-results.json', resultsJSON);
+    fs.writeFileSync('test-results/cypress-run-results.json', resultsJSON);
     process.exit(results.totalFailed)
   })
   .catch((error) => {
