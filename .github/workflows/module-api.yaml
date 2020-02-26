@@ -31,6 +31,7 @@ jobs:
   test-report:
     runs-on: ubuntu-latest
     steps:
+       if: success() | failure()
       - uses: actions/checkout@v1
       - run: npm ci
       - uses: actions/download-artifact@v1
