@@ -29,15 +29,9 @@ jobs:
           name: test-results
           path: test-results
       - uses: actions/upload-artifact@v1
-        if: failure()
         with:
-          name: cypress-screenshots
-          path: cypress/screenshots
-      - uses: actions/upload-artifact@v1
-        if: failure()
-        with:
-          name: cypress-videos
-          path: cypress/videos
+          name: test-report
+          path: test-report
   test-report:
     runs-on: ubuntu-latest
     needs: cypress-run
@@ -46,11 +40,11 @@ jobs:
       - run: npm ci
       - uses: actions/download-artifact@v1
         with:
-          name: ci-results
+          name: test-report
       - run: npm run merge-test-results
       - run: npm run generate-test-report
       - uses: actions/upload-artifact@v1
         if: always()
         with:
           name: test-report
-          path: test-results/test-report
+          path: test-report
