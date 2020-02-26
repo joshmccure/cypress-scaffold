@@ -27,7 +27,7 @@ cypress.run({
   record: true,
   group: 'E2E',
   tag: 'Test Environment',
-  ciBuildId: CI_BUILD_ID,
+  // ciBuildId: CI_BUILD_ID,
   reporter: 'mochawesome',
   reporterOptions: {
     reportDir: 'test-results/test-report',

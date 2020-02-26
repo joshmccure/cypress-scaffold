@@ -19,6 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: npm ci
+      - run: printenv
       - run: npm run cy:run:ci
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
