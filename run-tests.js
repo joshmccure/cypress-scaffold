@@ -7,6 +7,8 @@ const { v4: uuidv4 } = require('uuid');
 var CI_BUILD_ID;
 process.env.CI == 'true' ? CI_BUILD_ID = `Github-Actions-CI-${process.env.GITHUB_SHA}` : CI_BUILD_ID = `${process.env.AUTHOR}-${process.env.EXECUTION_ENVIRONMENT}-${uuidv4()}`
 
+console.log(CI_BUILD_ID)
+
 rm('test-results', (error) => {
   if (error) {
     console.error(`Error while removing existing report files: ${error}`)
