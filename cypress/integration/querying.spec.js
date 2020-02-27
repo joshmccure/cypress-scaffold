@@ -30,7 +30,7 @@ context('Querying', () => {
       // or you can get element's CSS property
       cy.get('[data-test-id="test-example"]')
         .invoke('css', 'position')
-        .should('equal', 'static2')
+        .should('equal', 'static')
   
       // or use assertions directly during 'cy.get()'
       // https://on.cypress.io/assertions
