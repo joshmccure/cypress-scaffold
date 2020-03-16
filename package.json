@@ -18,7 +18,7 @@
   "license": "ISC",
   "devDependencies": {
     "commitizen": "4.0.3",
-    "cypress": "4.0.2",
+    "cypress": "4.2.0",
     "cz-conventional-changelog": "3.1.0",
     "dotenv": "8.2.0",
     "eslint": "6.8.0",
