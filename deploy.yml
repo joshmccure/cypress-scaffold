@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cypress-deployment
+  labels:
+    app: cypress
+spec:
+  replicas: 25
+  selector:
+    matchLabels:
+      app: cypress
+  template:
+    metadata:
+      labels:
+        app: cypress
+    spec:
+      containers:
+      - name: cypress
+        image: cypressblahblah:latest
+        env:
+            - name: CI_BUILD_ID
+              value: "couldbreakthecomputerhereforsure"
+        imagePullPolicy: IfNotPresent
+        command: ["npm"]
+        args: ["run", "cy:run:ci"]
+        ports:
+        - containerPort: 80
+        
