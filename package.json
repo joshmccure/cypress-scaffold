@@ -11,7 +11,7 @@
     "commit": "git-cz",
     "lint": "eslint **/*.js",
     "lint:fix": "eslint --fix **/*.js",
-    "merge-test-results": "mochawesome-merge ./test-results/test-report/*.json > ./test-results/combined-mochawesome-results.json",
+    "merge-test-results": "mochawesome-merge ./test-results/mocha/*.json > ./test-results/combined-mochawesome-results.json",
     "generate-test-report": "marge ./test-results/combined-mochawesome-results.json --reportDir ./test-results/test-report/ --inline --charts --reportFilename cypress-scaffold-test-report --reportTitle \"Cypress Scaffold Test Report\" --reportPageTitle \"Cypress Scaffold Test Report\""
   },
   "author": "Josh McCure",
@@ -19,12 +19,14 @@
   "devDependencies": {
     "commitizen": "4.0.3",
     "cypress": "4.2.0",
+    "cypress-multi-reporters": "^1.2.4",
     "cz-conventional-changelog": "3.1.0",
     "dotenv": "8.2.0",
     "eslint": "6.8.0",
     "eslint-plugin-cypress": "2.10.3",
     "eslint-plugin-no-only-tests": "2.4.0",
     "mocha": "7.1.1",
+    "mocha-junit-reporter": "^1.23.3",
     "mochawesome": "5.0.0",
     "mochawesome-merge": "4.0.3",
     "mochawesome-report-generator": "4.1.0",
