@@ -1,3 +1,3 @@
-Cypress.Commands.add(`getTestElement`, (selector, options = {}) =>
+Cypress.Commands.add('getTestElement', (selector, options = {}) =>
   cy.get(`[data-testid="${selector}"]`, options)
 )
