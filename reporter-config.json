@@ -5,6 +5,7 @@
     },
     "reporterOptions": {
         "reportDir": "test-results/mocha",
+        "reportFilename": "result",
         "overwrite": false,
         "html": false,
         "json": true
