@@ -23,6 +23,7 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           CI: ${{ secrets.CI }}
+          PARALLEL: ${{ secrets.PARALLEL }}
       - uses: actions/upload-artifact@v1
         if: always()
         with:
