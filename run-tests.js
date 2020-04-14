@@ -3,7 +3,7 @@ const fs = require('fs');
 const rm = require('rimraf')
 require('dotenv').config()
 const { v4: uuidv4 } = require('uuid');
-var config = require('./config/ci.config'); //with path
+var config = require('./config/ci.config');
 
 const baseUrl = process.env.CYPRESS_BASE_URL || config.baseUrl
 const parallel = process.env.PARALLEL || false
