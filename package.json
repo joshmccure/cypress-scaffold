@@ -17,7 +17,7 @@
   "author": "Josh McCure",
   "license": "ISC",
   "devDependencies": {
-    "commitizen": "4.0.4",
+    "commitizen": "4.1.2",
     "cypress": "4.5.0",
     "cypress-multi-reporters": "^1.2.4",
     "cz-conventional-changelog": "3.1.0",
