@@ -31,7 +31,7 @@
     "mochawesome-merge": "4.0.3",
     "mochawesome-report-generator": "5.1.0",
     "rimraf": "3.0.2",
-    "uuid": "7.0.3"
+    "uuid": "8.1.0"
   },
   "config": {
     "commitizen": {
