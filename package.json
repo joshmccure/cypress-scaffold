@@ -17,10 +17,8 @@
   "author": "Josh McCure",
   "license": "ISC",
   "devDependencies": {
-    "commitizen": "4.0.4",
     "cypress": "4.6.0",
     "cypress-multi-reporters": "^1.2.4",
-    "cz-conventional-changelog": "3.1.0",
     "dotenv": "8.2.0",
     "eslint": "7.1.0",
     "eslint-plugin-cypress": "2.10.3",
