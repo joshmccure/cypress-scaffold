@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cypress
+spec:
+  template:
+    spec:
+      containers:
+      - name: cypress-worker
+        image: cypress-kubernetes:latest
+        imagePullPolicy: Never
+        command: ["npm"]
+        args: ["run", "kubernetes"]
+      restartPolicy: Never
