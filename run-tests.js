@@ -4,7 +4,6 @@ const rm = require('rimraf')
 require('dotenv').config()
 
 var recordOptions = {
-  // CYPRESS_RECORD_KEY must be set
   record: true,
 }
 
@@ -23,7 +22,7 @@ var baseOptions = {
   }
 }
 
-process.env.CYPRESS_DASHBOARD_RECORD == 'true' ? baseOptions = Object.assign(recordOptions, baseOptions) : console.log('This test run will not be recorded on the Cypress Dashboard')
+process.env.CYPRESS_RECORD_KEY != undefined ? baseOptions = Object.assign(recordOptions, baseOptions) : console.log('This test run will not be recorded on the Cypress Dashboard')
 process.env.PARALLEL == 'true' ? baseOptions = Object.assign(parralelOptions, baseOptions) : console.log('This test run will not be running in parralel')
 
 rm('test-results', (error) => {
