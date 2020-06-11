@@ -3,8 +3,14 @@ const fs = require('fs');
 const rm = require('rimraf')
 require('dotenv').config()
 
+var configPath = process.env.CYPRESS_CONFIG_FILE || 'config/default.config.json'
+var config = JSON.parse(fs.readFileSync(`./${configPath}`, 'utf8'));
+var baseUrl = process.env.BASEURL || config.baseUrl
+var apiUrl = process.env.APIURL || config.env.apiUrl
+
 var recordOptions = {
   record: true,
+  tag: `UI: ${baseUrl},API: ${apiUrl}` 
 }
 
 var parralelOptions = {
@@ -24,7 +30,7 @@ var overideUrls = {
 var baseOptions = {
   browser: 'chrome',
   headless: true,
-  configFile: process.env.CYPRESS_CONFIG_FILE || 'config/default.config.json',
+  configFile: configPath,
   reporter: 'cypress-multi-reporters',
   reporterOptions: {
     configFile: 'reporter-config.json'
