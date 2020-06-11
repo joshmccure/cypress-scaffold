@@ -26,15 +26,15 @@ stages:
           # just use "/home/vsts" for now
           - task: CacheBeta@1
             inputs:
-              key: npm | $(Agent.OS) | Bp.Bhb.UiTests/package-lock.json
+              key: npm | $(Agent.OS) | package-lock.json
               path: /home/vsts/.npm
-              restoreKeys: npm | $(Agent.OS) | Bp.Bhb.UiTests/package-lock.json
+              restoreKeys: npm | $(Agent.OS) | package-lock.json
             displayName: Cache NPM packages
           - task: CacheBeta@1
             inputs:
-              key: cypress | $(Agent.OS) | Bp.Bhb.UiTests/package-lock.json
+              key: cypress | $(Agent.OS) | package-lock.json
               path: /home/vsts/.cache/Cypress
-              restoreKeys: cypress | $(Agent.OS) | Bp.Bhb.UiTests/package-lock.json
+              restoreKeys: cypress | $(Agent.OS) | package-lock.json
             displayName: Cache Cypress binary
 
           - script: npm ci
