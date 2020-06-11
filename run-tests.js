@@ -12,6 +12,15 @@ var parralelOptions = {
   parallel: true,
 }
 
+var overideUrls = {
+  config: {
+    baseUrl: process.env.BASEURL,
+    env: {
+      apiUrl: process.env.APIURL
+    }
+  }
+}
+
 var baseOptions = {
   browser: 'chrome',
   headless: true,
@@ -22,8 +31,9 @@ var baseOptions = {
   }
 }
 
-process.env.CYPRESS_RECORD_KEY != undefined ? baseOptions = Object.assign(recordOptions, baseOptions) : console.log('This test run will not be recorded on the Cypress Dashboard')
-process.env.PARALLEL == 'true' ? baseOptions = Object.assign(parralelOptions, baseOptions) : console.log('This test run will not be running in parralel')
+process.env.CYPRESS_RECORD_KEY != undefined ? baseOptions = Object.assign(recordOptions, baseOptions) : console.log('This test run will NOT be recorded on the Cypress Dashboard')
+process.env.PARALLEL == 'true' ? baseOptions = Object.assign(parralelOptions, baseOptions) : console.log('This test run will NOT be running in parralel')
+process.env.BASEURL !=undefined ? baseOptions = Object.assign(overideUrls, baseOptions) : console.log('Using default baseUrl and apiUrl')
 
 rm('test-results', (error) => {
   if (error) {
