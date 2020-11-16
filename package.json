@@ -37,10 +37,5 @@
     "pretty-quick": "^3.1.0",
     "rimraf": "3.0.2",
     "uuid": "8.3.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint:fix && pretty-quick --staged && npm run cy:run"
-    }
   }
 }
