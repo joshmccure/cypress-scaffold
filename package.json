@@ -12,6 +12,7 @@
     "commit": "git-cz",
     "lint": "eslint **/*.js",
     "lint:fix": "eslint --fix **/*.js",
+    "postinstall": "husky install",
     "merge-test-results": "mochawesome-merge ./test-results/mocha/*.json > ./test-results/combined-mochawesome-results.json",
     "generate-test-report": "marge ./test-results/combined-mochawesome-results.json --reportDir ./test-results/test-report/ --inline --charts --reportFilename cypress-scaffold-test-report --reportTitle \"Cypress Scaffold Test Report\" --reportPageTitle \"Cypress Scaffold Test Report\""
   },
@@ -24,6 +25,7 @@
     "eslint": "7.13.0",
     "eslint-plugin-cypress": "2.11.2",
     "eslint-plugin-no-only-tests": "2.4.0",
+    "husky": "^5.0.0-beta.0",
     "mocha": "8.2.1",
     "mocha-junit-reporter": "2.0.0",
     "mochawesome": "6.2.1",
@@ -31,10 +33,5 @@
     "mochawesome-report-generator": "5.1.0",
     "rimraf": "3.0.2",
     "uuid": "8.3.1"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
