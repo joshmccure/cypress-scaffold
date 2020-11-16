@@ -1,40 +1,39 @@
 {
-  "name": "scaffold-e2e-tests",
-  "version": "1.0.0",
-  "description": "A repository using cypress to test the scaffold application",
-  "main": "index.js",
-  "scripts": {
-    "test": "cypress run",
-    "cy:open": "cypress open",
-    "cy:run": "cypress run --headless --browser chrome",
-    "cy:run:ci": "node run-tests.js",
-    "kubernetes": "cypress run --headless --browser chrome --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json $(CYPRESS_RECORD_KEY)",
-    "commit": "git-cz",
-    "lint": "eslint **/*.js",
-    "lint:fix": "eslint --fix **/*.js",
-    "merge-test-results": "mochawesome-merge ./test-results/mocha/*.json > ./test-results/combined-mochawesome-results.json",
-    "generate-test-report": "marge ./test-results/combined-mochawesome-results.json --reportDir ./test-results/test-report/ --inline --charts --reportFilename cypress-scaffold-test-report --reportTitle \"Cypress Scaffold Test Report\" --reportPageTitle \"Cypress Scaffold Test Report\""
-  },
-  "author": "Josh McCure",
-  "license": "ISC",
-  "devDependencies": {
-    "cypress": "5.6.0",
-    "cypress-multi-reporters": "1.4.0",
-    "dotenv": "8.2.0",
-    "eslint": "7.13.0",
-    "eslint-plugin-cypress": "2.11.2",
-    "eslint-plugin-no-only-tests": "2.4.0",
-    "mocha": "8.2.1",
-    "mocha-junit-reporter": "2.0.0",
-    "mochawesome": "6.2.1",
-    "mochawesome-merge": "4.2.0",
-    "mochawesome-report-generator": "5.1.0",
-    "rimraf": "3.0.2",
-    "uuid": "8.3.1"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+    "name": "scaffold-e2e-tests",
+    "version": "1.0.0",
+    "description": "A repository using cypress to test the scaffold application",
+    "main": "index.js",
+    "scripts": {
+        "test": "cypress run",
+        "cy:open": "cypress open",
+        "cy:run": "cypress run --headless --browser chrome",
+        "prettier": "prettier --write **/*.js",
+        "pretty-quick": "pretty-quick ",
+        "cy:run:ci": "node run-tests.js",
+        "lint": "eslint **/*.js",
+        "lint:fix": "eslint --fix **/*.js",
+        "postinstall": "husky install",
+        "merge-test-results": "mochawesome-merge ./test-results/mocha/*.json > ./test-results/combined-mochawesome-results.json",
+        "generate-test-report": "marge ./test-results/combined-mochawesome-results.json --reportDir ./test-results/test-report/ --inline --charts --reportFilename cypress-scaffold-test-report --reportTitle \"Cypress Scaffold Test Report\" --reportPageTitle \"Cypress Scaffold Test Report\""
+    },
+    "author": "Josh McCure",
+    "license": "ISC",
+    "devDependencies": {
+        "cypress": "5.6.0",
+        "cypress-multi-reporters": "1.4.0",
+        "dotenv": "8.2.0",
+        "eslint": "7.13.0",
+        "eslint-plugin-cypress": "2.11.2",
+        "eslint-plugin-no-only-tests": "2.4.0",
+        "husky": "^5.0.0-beta.0",
+        "mocha": "8.2.1",
+        "mocha-junit-reporter": "2.0.0",
+        "mochawesome": "6.2.1",
+        "mochawesome-merge": "4.2.0",
+        "mochawesome-report-generator": "5.1.0",
+        "prettier": "^2.1.2",
+        "pretty-quick": "^3.1.0",
+        "rimraf": "3.0.2",
+        "uuid": "8.3.1"
     }
-  }
 }
