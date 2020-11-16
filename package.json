@@ -7,6 +7,8 @@
     "test": "cypress run",
     "cy:open": "cypress open",
     "cy:run": "cypress run --headless --browser chrome",
+    "prettier": "prettier",
+    "pretty-quick": "pretty-quick",
     "cy:run:ci": "node run-tests.js",
     "kubernetes": "cypress run --headless --browser chrome --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json $(CYPRESS_RECORD_KEY)",
     "commit": "git-cz",
@@ -31,7 +33,13 @@
     "mochawesome": "6.2.1",
     "mochawesome-merge": "4.2.0",
     "mochawesome-report-generator": "5.1.0",
+    "pretty-quick": "^3.1.0",
     "rimraf": "3.0.2",
     "uuid": "8.3.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
