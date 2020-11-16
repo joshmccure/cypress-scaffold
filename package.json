@@ -10,8 +10,6 @@
         "prettier": "prettier --write **/*.js",
         "pretty-quick": "pretty-quick ",
         "cy:run:ci": "node run-tests.js",
-        "kubernetes": "cypress run --headless --browser chrome --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json $(CYPRESS_RECORD_KEY)",
-        "commit": "git-cz",
         "lint": "eslint **/*.js",
         "lint:fix": "eslint --fix **/*.js",
         "postinstall": "husky install",

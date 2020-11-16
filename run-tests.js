@@ -14,7 +14,7 @@ var recordOptions = {
 }
 
 var parralelOptions = {
-    ciBuildId: process.env.CI_BUILD_ID,
+    // ciBuildId: process.env.CI_BUILD_ID,
     parallel: true,
 }
 

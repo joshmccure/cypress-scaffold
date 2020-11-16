@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         containers: [1, 2]
-    container: cypress/browsers:node13.3.0-chrome-79-ff70
+    container: cypress/browsers:node12.14.1-chrome85-ff81
     steps:
       - uses: actions/checkout@v1
       - run: npm ci
