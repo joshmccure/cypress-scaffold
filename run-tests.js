@@ -7,7 +7,7 @@ var configPath = process.env.CYPRESS_CONFIG_FILE || 'config/default.config.json'
 var config = JSON.parse(fs.readFileSync(`./${configPath}`, 'utf8'))
 var baseUrl = process.env.BASEURL || config.baseUrl
 var apiUrl = process.env.APIURL || config.env.apiUrl
-var ciBuildId = `${ process.env.GITHUB_SHA }-${ process.env.GITHUB_WORKFLOW }-${ process.env.GITHUB_EVENT_NAME }`
+var ciBuildId = `${process.env.GITHUB_SHA}-${process.env.GITHUB_WORKFLOW}-${process.env.GITHUB_EVENT_NAME}`
 
 var recordOptions = {
     record: true,
