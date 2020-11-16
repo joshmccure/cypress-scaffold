@@ -1,14 +1,11 @@
 {
-    "plugins": [
-      "cypress",
-      "no-only-tests"
-    ],
-    "rules": {
-        "cypress/no-assigning-return-values": "error",
-        "cypress/no-unnecessary-waiting": "error",
-        "no-only-tests/no-only-tests": "error"
-      },
-      "env": {
-        "cypress/globals": true
-      }
-  }
+	"plugins": ["cypress", "no-only-tests"],
+	"rules": {
+		"cypress/no-assigning-return-values": "error",
+		"cypress/no-unnecessary-waiting": "error",
+		"no-only-tests/no-only-tests": "error"
+	},
+	"env": {
+		"cypress/globals": true
+	}
+}
