@@ -59,7 +59,7 @@ cypress
     .run(baseOptions)
     .then((results) => {
         let resultsJSON = JSON.stringify(results)
-        fs.writeFileSync("test-results/cypress-run-results.json", resultsJSON)
+        fs.writeFileSync('test-results/cypress-run-results.json', resultsJSON)
         process.exit(results.totalFailed)
     })
     .catch((error) => {
