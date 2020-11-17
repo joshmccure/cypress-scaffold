@@ -1,6 +1,5 @@
 ## 🚀 Get Up and Running
 
-
 ### Install the dependencies
 
 Once you have cloned the repository:
@@ -11,16 +10,18 @@ Once you have cloned the repository:
 ### Run Tests with [Cypress.io](https://docs.cypress.io/)
 
 ##### Running Tests with a Headed Browser
+
 1. Enter the following command to open the Cypress Test Runner:
 
-   `npm run cy:open`
+    `npm run cy:open`
 
 2. Once opened, you can select which tests to run:
 
 ##### Running Tests with a Headless Browser
+
 1. Enter the following command to run tests with headless chrome:
 
-   `npm run cy:run`
+    `npm run cy:run`
 
 ## ⚠️ Troubleshooting Failures
 
@@ -37,6 +38,7 @@ If it looks like it's failing to wait for an element, try waiting for the elemen
 If it looks like it's failing from changing test data, try to make sure your tests don't rely on built up state, you can read about this [here.](https://docs.cypress.io/guides/references/best-practices.html#Having-tests-rely-on-the-state-of-previous-tests)
 
 ### Test(s) are failing in the CI Pipeline
+
 If you notice tests are failing in the CI pipeline but aren't failing on your local machine, try to reproduce the CI test run as it does on CI.
 
 1. build the cypress docker image
@@ -50,40 +52,35 @@ This project uses the PR process to review and test changes before they're merge
 
 For any kind of change to files in this repo, you can follow the below steps.
 
-- Create a new branch with a descriptive name. Eg. `test/new-user`
+-   Create a new branch with a descriptive name. Eg. `test/new-user`
 
-- Run `npm install` to ensure you have all the latest depedencies installed. If you're updating dependencies in `package.json`
+-   Run `npm install` to ensure you have all the latest depedencies installed. If you're updating dependencies in `package.json`
 
-- Once you have completed the changes you want to push, run the linting, ensure the tests pass headlessly, as they run on CI this way:
+-   Once you have completed the changes you want to push, run the linting, ensure the tests pass headlessly, as they run on CI this way:
 
-  `npm run lint`  
-  `npm run cy:run`
+    `npm run lint`  
+    `npm run cy:run`
 
-- Once all linting and the tests are passing, add your changes and commit them to your branch with commitizen.
+-   Once all linting and the tests are passing, add your changes and commit them to your branch with commitizen.
 
-  `git add <files>`  
-  `npm run commit`
+    `git add <files>`  
+    `npm run commit`
 
-- Select the appropriate type of commit with commitizen and push your changes to your branch.  
-  `git push origin test/new-user`
+-   Select the appropriate type of commit with commitizen and push your changes to your branch.  
+    `git push origin test/new-user`
 
-- Open a PR to merge your branch in to `master`.
+-   Open a PR to merge your branch in to `master`.
 
-- Once all tests in CI are passing, submit the PR for review.
+-   Once all tests in CI are passing, submit the PR for review.
 
-- When at least one person has approved the PR, go ahead and merge it in to `master`. After the branch has been merged, ensure it is deleted.
+-   When at least one person has approved the PR, go ahead and merge it in to `master`. After the branch has been merged, ensure it is deleted.
 
 ### Who can review and approve a PR?
 
 Anyone! Please make sure that all the linting and tests are passing before approval.
 
-
 ## 🚢 Continuous Integration Pipeline
 
-
-#### View the CI Pipeline 
+#### View the CI Pipeline
 
 To view the CI Pipeline latest runs go [here.](https://github.com/joshpzero/cypress-scaffold)
-
-
-
