@@ -10,7 +10,7 @@
     "cy:run:smoke": "cypress run --headless --browser chrome",
     "cy:run:ci": "node run-tests.js",
     "prettier": "prettier --write **/*.js",
-    "pretty-quick": "pretty-quick",
+    "pretty-quick": "pretty-quick --staged",
     "lint": "eslint **/*.js",
     "lint:fix": "eslint --fix **/*.js",
     "postinstall": "husky install",
