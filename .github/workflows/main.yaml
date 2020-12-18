@@ -15,7 +15,7 @@ jobs:
     container: cypress/browsers:node13.3.0-chrome-79-ff70
     steps:
       - uses: actions/checkout@v1
-      - uses: cypress-io/github-action@v1
+      - uses: cypress-io/github-action@v2
         with:
           browser: chrome
           headless: true
