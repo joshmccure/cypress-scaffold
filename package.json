@@ -20,7 +20,7 @@
   "author": "Josh McCure",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "6.3.0",
+    "cypress": "6.4.0",
     "cypress-multi-reporters": "1.4.0",
     "dotenv": "8.2.0",
     "eslint": "7.18.0",
