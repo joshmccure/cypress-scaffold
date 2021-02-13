@@ -23,7 +23,7 @@
     "cypress": "6.4.0",
     "cypress-multi-reporters": "1.4.0",
     "dotenv": "8.2.0",
-    "eslint": "7.19.0",
+    "eslint": "7.20.0",
     "eslint-plugin-cypress": "2.11.2",
     "eslint-plugin-no-only-tests": "2.4.0",
     "husky": "5.0.9",
